@@ -1,42 +1,116 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.chat-app {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  height: 100vh;
+  width: 100vw;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar {
+  border-right: 1px solid #d3d7e3;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #f7f8fc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.card {
-  padding: 2em;
+.sidebar-header h1,
+.conversation-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
 }
 
-.read-the-docs {
-  color: #888;
+.new-chat-form,
+.message-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.new-chat-form input,
+.message-form input {
+  flex: 1;
+  border: 1px solid #c7cce0;
+  border-radius: 6px;
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+}
+
+.chat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  overflow: auto;
+}
+
+.chat-item {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #cfd4e6;
+  color: #1b1e2c;
+  background: white;
+}
+
+.chat-item.active {
+  background: #e9edff;
+  border-color: #aeb8e8;
+}
+
+.conversation-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.conversation-header {
+  border-bottom: 1px solid #d3d7e3;
+  padding: 1rem;
+}
+
+.messages {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1rem;
+  background: #fcfcfe;
+}
+
+.message {
+  max-width: 680px;
+  border: 1px solid #dfe3f1;
+  background: white;
+  border-radius: 8px;
+  padding: 0.7rem;
+}
+
+.message p {
+  margin: 0;
+  margin-bottom: 0.25rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.message time {
+  font-size: 0.75rem;
+  color: #66708a;
+}
+
+.message-form {
+  border-top: 1px solid #d3d7e3;
+  padding: 1rem;
 }
